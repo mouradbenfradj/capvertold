@@ -1,0 +1,15 @@
+<div class="contact-information" itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="{$store_name}">
+    <p><span class="street-address" itemprop="streetAddress"></span>{config key="store_address1"} {config key="store_address2"} {config key="store_address3"}</p>
+    <p><span class="postal-code" itemprop="postalCode"></span>{config key="store_zipcode"}</p>
+    <p  itemprop="addressLocality">
+        {config key="store_city"}
+        {if {config key="store_country"} }
+        {loop type="country" name="address.country.title" id={config key="store_country"}},
+        <span class="country-name">{$TITLE}</span>{/loop}
+        {/if}
+    </p>
+    {if {config key="store_phone"} }
+    <p><span class="tel" itemprop="telephone"></span>{config key="store_phone"}</p>
+    {/if}
+</div>
